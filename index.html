@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="form">
-      <form class="formItem"  method="post" action="https://geosv23.github.io/Rocket/send-email">
+      <form class="formItem"  method="post" action="/send-email">
         <p class="formItem__title">Оставьте контактные данные</p>
         <div class="nameForm">
         <input class="nameInput" type="text" name="input1" placeholder="Ваше имя">
@@ -111,31 +111,45 @@
       </div>
     </section>
     <wrapper class="wrapper">
+      
       <!-- Слайдер -->
       <div class="mySwiper swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="slider_text">
-              <h1 class="slider_title">CHEK-UP</h1>
-              <p class="slider__pretitle">для мужчин</p>
-              <ul class="slider__services">
-                <li class="slider__services-item">Гормональный скрининг</li>
-                <li class="slider__services-item">Тестерон</li>
-                <li class="slider__services-item">Свободный тестостерон</li>
-                <li class="slider__services-item">
-                  Глобулин, связывающий половые гормоны
-                </li>
-              </ul>
-              <p class="slider__services-coast">Всего 2800₽ <span class="slider__services-oldCoast">3500₽</span></p>
-              <div class="slider__services-buttons">
-                <button class="button__sign">Записаться</button>
-                <button class="button__more">Подробнее</button>
+            <div class="slider__leftPart">
+              <div class="slider_text">
+                <h1 class="slider_title">CHEK-UP</h1>
+                <p class="slider__pretitle">для мужчин</p>
+                <ul class="slider__services">
+                  <li class="slider__services-item">Гормональный скрининг</li>
+                  <li class="slider__services-item">Тестерон</li>
+                  <li class="slider__services-item">Свободный тестостерон</li>
+                  <li class="slider__services-item">
+                    Глобулин, связывающий половые гормоны
+                  </li>
+                </ul>
+                <p class="slider__services-coast">Всего 2800₽ <span class="slider__services-oldCoast">3500₽</span></p>
+                <div class="slider__services-buttons">
+                  <button class="button__sign">Записаться</button>
+                  <button class="button__more">Подробнее</button>
+                </div>
               </div>
+              <img class="slider__leftPart-con" src="src/public/images/backgroundslider.png" alt="">
+            </div>
+            <div class="slider-image-right">
+              <img src="src/public/images/doctorTable.png" alt="" class="slider-image-img">
             </div>
           </div>
           <div class="swiper-slide">
+            <div class="slider__leftPart">
+              
+              <img class="slider__leftPart-con" src="src/public/images/backgroundslider.png" alt="">
+            </div>
+            <div class="slider-image-right">
+              <img src="src/public/images/doctorTable.png" alt="" class="slider-image-img">
+            </div>
             <div class="slider_text">
-              <h1 class="slider_title">Анализы</h1>
+              <h1 class="slider_title">CHEK-UP</h1>
               <p class="slider__pretitle">всех видов</p>
               <ul class="slider__services">
                 <li class="slider__services-item">Lorem, ipsum.</li>
@@ -153,8 +167,15 @@
             </div>
           </div>
           <div class="swiper-slide">
+            <div class="slider__leftPart">
+             
+              <img class="slider__leftPart-con" src="src/public/images/backgroundslider.png" alt="">
+            </div>
+            <div class="slider-image-right">
+              <img src="src/public/images/doctorTable.png" alt="" class="slider-image-img">
+            </div>
             <div class="slider_text">
-              <h1 class="slider_title">lorem</h1>
+              <h1 class="slider_title">CHEK-UP</h1>
               <p class="slider__pretitle">Lorem, ipsum.</p>
               <ul class="slider__services">
                 <li class="slider__services-item">Lorem, ipsum.</li>
@@ -231,5 +252,6 @@
       });
     </script>
     <script type="module" src="/src/js/script.js"></script>
+
   </body>
 </html>

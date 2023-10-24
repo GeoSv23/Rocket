@@ -268,16 +268,33 @@ body {
   height: 100%;
 }
 
+// мой слайдер
+.slider__leftPart {
+  width: 50%;
+  position: relative;
+}
+
+.slider__leftPart-con {
+  height: 100%;
+  width: 145%;
+}
+
+.slider-image-right {
+  width: 81%;
+  margin: 0;
+}
+
+.slider-image-img {
+  width: 100%;
+}
+
+//
+
 .swiper-slide {
   font-family: PTSans-Caption;
   position: relative !important;
   width: 100% !important;
-  height: 400px !important;
-  background-image: url(/src/public/images/doctor.png) !important;
-  background-repeat: no-repeat !important;
-  background-position-x: center !important;
-  background-position-y: center !important;
-  background-size: cover !important;
+  // height: 400px !important;
   text-align: start;
   font-size: 18px;
   margin-bottom: 100px;
@@ -287,6 +304,7 @@ body {
 }
 
 .slider_text {
+  position: absolute;
   margin-left: 40px !important;
   max-width: 300px !important;
 }
@@ -355,17 +373,19 @@ body {
 }
 
 .swiper-pagination {
-  top: 450px !important;
+  top: 90% !important;
   font-family: PTSans-Caption;
 }
 
 .swiper-button-next {
-  top: 450px !important;
+  top: 90% !important;
+  right: 30% !important;
   //  !important;
 }
 
 .swiper-button-prev {
-  top: 450px !important;
+  top: 90% !important;
+  left: 30% !important;
 }
 
 .footer {
@@ -545,6 +565,24 @@ body {
   .introducing__image-mob {
     display: block;
     width: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .slider__leftPart {
+    width: 100%;
+  }
+
+  .slider__leftPart-con {
+    width: 125%;
+  }
+
+  .slider-image-right {
+    width: 100%;
+    margin-bottom: -10px;
   }
 
   .footer__nav {
