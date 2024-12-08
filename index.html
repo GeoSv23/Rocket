@@ -1,235 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="src/public/images/rocket.svg" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles/style.scss" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <title>Rocket</title>
-  </head>
-  <body>
-    <div class="form">
-      <form class="formItem"  method="post" action="https://geosv23.github.io/Rocket/send-email">
-        <p class="formItem__title">Оставьте контактные данные</p>
-        <div class="nameForm">
-        <input class="nameInput" type="text" name="input1" placeholder="Ваше имя">
-          
-        </div>
-        <div class="numberForm">
-        <input class="numberInput" type="text" name="input2" placeholder="Введите ваш e-mail">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современный Лэндинг с Модальным Окном</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 3.2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.7rem;
+            color: #555;
+            margin-bottom: 50px;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 500px;
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cta-btn {
+            display: inline-block;
+            background-color: #ff6200;
+            color: #fff;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 30px;
+        }
+        .cta-btn:hover {
+            background-color: #e55500;
+        }
 
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            width: 70%;
+            max-width: 500px;
+        }
+        .modal-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .modal-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .close-btn {
+            background-color: #ff6200;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .close-btn:hover {
+            background-color: #e55500;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .cta-btn {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+            .video-container {
+                height: 300px;
+            }
+            .modal-content {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Добро пожаловать на наш сайт!</h1>
+        <h2>Мы предлагаем инновационные решения для вашего бизнеса.</h2>
+        
+        <div class="video-container">
+            <!-- Локальное видео с автопроигрыванием и без звука -->
+            <video autoplay muted loop>
+                <source src="video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
         </div>
         
-        <input class="formButton" type="submit" value="отправить">
-      <img src="src/public/images/cancelButton.svg" alt="" class="cancelForm">
-
-      </form>
-
+        <a href="javascript:void(0);" class="cta-btn" id="showModalBtn">Узнать больше</a>
     </div>
-    <wrapper class="wrapper">
-      <header class="header">
-        <div class="header__leftColumn">
-          <div class="burger">
-            <span class="line1"></span>
-            <span class="line2"></span
-            ><span class="line3"></span>
-          </div>
-          <img
-            src="src/public/images/logo.svg"
-            alt="Логотип"
-            class="header__logo"
-          />
-        </div>
-          <div class="header__info">
-            <ul class="header__adress">
-              <li class="adressItem icon__nav">г. Ростов-на-Дону</li>
-              <li class="adressItem">Ул.Ленина, 2б</li>
-            </ul>
-            <div class="header__connect">
-              <img
-              src="src/public/images/whatsappIcon.svg"
-              alt="whatsup"
-              class="header__rightColumn-img"
-            />
-            <a class="header__rightColumn-number" href="tel:+7(863) 000 00 00"> +7(863) 000 00 00</a> 
 
-            <button class="button__sign">Записаться</button>
-            </div>
-            
-          </div>
+    <!-- Модальное окно -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <h2>Это модальное окно</h2>
+            <p>Вы только что нажали на кнопку и теперь видите это окно с текстом. Мы можем показать дополнительную информацию или предложить действия.</p>
+            <button class="close-btn" id="closeModalBtn">Закрыть</button>
         </div>
-      </header>
-    </wrapper>
-    <nav class="nav">
-      <wrapper class="wrapper">
-        <ul class="nav__items">
-          <li class="nav__item">О клинике</li>
-          <li class="nav__item">Услуги</li>
-          <li class="nav__item">Специалисты</li>
-          <li class="nav__item">Цены</li>
-          <li class="nav__item">Контакты</li>
-        </ul>
-      </wrapper>
-    </nav>
-    <section class="introducing">
-    <!-- Бургер меню расположено здесь чтобы header всегда оставался доступен -->
-      <div class="burgerMenu">
-        <ul class="nav__items-burger">
-          <li class="nav__item">О клинике</li>
-          <li class="nav__item">Услуги</li>
-          <li class="nav__item">Специалисты</li>
-          <li class="nav__item">Цены</li>
-          <li class="nav__item">Контакты</li>
-        </ul>
-        <button class="button__sign button__sign-burger">Записаться</button>
-      </div>
-      <div class="introducing__description">
-        <h1 class="introducing__title">
-          Многопрофильная клиника для детей и взрослых
-        </h1>
-        <p class="introducing__desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur?
-        </p>
-      </div>
-      <div class="introducing__image">
-        <img
-          src="src/public/images/kidsRoom.png"
-          alt="комната для детей"
-          class="introducing__image-item"
-        />
-      </div>
-      <div class="introducing__image-mob">
-        <img
-          src="src/public/images/kidsRoomMob.png"
-          alt="комната для детей"
-          class="introducing__image-item-mob"
-        />
-      </div>
-    </section>
-    <wrapper class="wrapper">
-      <!-- Слайдер -->
-      <div class="mySwiper swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slider_text">
-              <h1 class="slider_title">CHEK-UP</h1>
-              <p class="slider__pretitle">для мужчин</p>
-              <ul class="slider__services">
-                <li class="slider__services-item">Гормональный скрининг</li>
-                <li class="slider__services-item">Тестерон</li>
-                <li class="slider__services-item">Свободный тестостерон</li>
-                <li class="slider__services-item">
-                  Глобулин, связывающий половые гормоны
-                </li>
-              </ul>
-              <p class="slider__services-coast">Всего 2800₽ <span class="slider__services-oldCoast">3500₽</span></p>
-              <div class="slider__services-buttons">
-                <button class="button__sign">Записаться</button>
-                <button class="button__more">Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slider_text">
-              <h1 class="slider_title">Анализы</h1>
-              <p class="slider__pretitle">всех видов</p>
-              <ul class="slider__services">
-                <li class="slider__services-item">Lorem, ipsum.</li>
-                <li class="slider__services-item">Lorem.</li>
-                <li class="slider__services-item">Lorem, ipsum dolor.</li>
-                <li class="slider__services-item">
-                  Lorem, ipsum dolor.
-                </li>
-              </ul>
-              <div class="slider__services-buttons">
-                <button class="button__sign">Записаться</button>
-                <button class="button__more">Подробнее</button>
-              </div>
-              
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slider_text">
-              <h1 class="slider_title">lorem</h1>
-              <p class="slider__pretitle">Lorem, ipsum.</p>
-              <ul class="slider__services">
-                <li class="slider__services-item">Lorem, ipsum.</li>
-                <li class="slider__services-item">charset</li>
-                <li class="slider__services-item">vdsaasas/li>
-                <li class="slider__services-item">
-                  adressItem
-                </li>
-              </ul>
-              <div class="slider__services-buttons">
-                <button class="button__sign">Записаться</button>
-                <button class="button__more">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-next next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </wrapper>
-    <footer class="footer">
-      <wrapper class="wrapper">
-        <nav class="footer__nav">
-          <div class="footer__container">
-            <div class="footer__image">
-              <img
-                src="src/public/images/logoFooter.svg"
-                alt="Логотип"
-                class="footer__logo"
-              />
-            </div>
-            <ul class="footer__nav-items">
-              <li class="footer__nav-item">О клинике</li>
-              <li class="footer__nav-item">Услуги</li>
-              <li class="footer__nav-item">Специалисты</li>
-              <li class="footer__nav-item">Цены</li>
-              <li class="footer__nav-item">Контакты</li>
-            </ul>
-              <div class="footer__socialMedias">
-                <img
-                  src="src/public/images/instagramIcon.svg"
-                  alt="instagram"
-                  class="footer__socialMedias-icon"
-                />
-                <img
-                  src="src/public/images/whatsappIcon.svg"
-                  alt="whatsup"
-                  class="footer__socialMedias-icon"
-                />
-                <img
-                  src="src/public/images/telegramIcon.svg"
-                  alt="telegram"
-                  class="footer__socialMedias-icon"
-                />
-            </div>
-          </div>  
-        </nav>
-      </wrapper>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    
-    <!-- Initialize Swiper -->
+    </div>
+
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+        // Открытие модального окна
+        document.getElementById('showModalBtn').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'flex';
+        });
+
+        // Закрытие модального окна
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+        });
+
+        // Закрытие модального окна при клике вне его
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        });
     </script>
-    <script type="module" src="/src/js/script.js"></script>
-  </body>
+
+</body>
 </html>
